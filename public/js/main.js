@@ -1,20 +1,39 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-module.exports = userData = [
-    {username: 'tif', password: 'TiF<>123'},
-    {username: 'josh', password: 'JoSh#21'},
-    {username: 'nathan', password: 'nathanWhat?'},
-    {username: 'kit', password: 'tikKit'},
-    {username: 'kali', password: 'kali321@'}
-]
-},{}],2:[function(require,module,exports){
-const data = require('./data')
-// console.log(data)
+// import {  } from "";
+import data  from './data.js';
 
-function loadData() {
-    data.forEach(el => console.log(el))
-    console.log('hays')
-    return
+const form = document.querySelector('#myForm')
+const username = document.querySelector('#myUsername')
+const password = document.querySelector('#myPassword')
+const submitBtn = document.querySelector('#mySubmit')
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    checkFormError()
+})
+
+submitBtn.addEventListener('submit', e => {
+    e.preventDefault()
+})
+
+const checkFormError = () => {
+    const usernameText = username.value
+    const passwordText = password.value
+
+    if (!usernameText) return console.log('falsy username')
+    else if (!passwordText) return console.log('falsy password')
+    else if (usernameText && passwordText) return console.log(checkInputs(usernameText, passwordText))   
 }
 
-loadData()
-},{"./data":1}]},{},[2]);
+const checkInputs = (inputUsername, inputPassword) => {
+    const validUsername = data.findIndex(el => el.username === inputUsername)
+    if (validUsername < 0) return 'Username doesn\'t exist'
+
+    const validPassword = data.findIndex(el => el.password === inputPassword)
+    if (validPassword < 0) return 'Wrong password'
+
+    if (validUsername === validPassword) return true
+    else return 'Wrong password'
+}
+
+
+
