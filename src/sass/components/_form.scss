@@ -1,0 +1,115 @@
+@use '../abstract/'as abs;
+
+.container {
+    border: 2px solid abs.$primary-color;
+    border-radius: 1em;
+    box-shadow: abs.$shadow;
+    padding: 2em 1em;
+    position: relative;
+    width: min(90%, 450px);
+
+    & > h1 {
+        color: abs.$primary-color;
+        font-family: abs.$open-sans;
+        font-size: clamp(32px, 10vw, 42px);
+        margin-bottom: .5em;
+    }
+
+    #myForm {
+        @include abs.flex(center, center, column, nowrap, 1em);
+
+        &>*:not(.line) {
+            @include abs.resetInputs();
+            font-family: abs.$open-sans;
+            font-size: 16px;
+            padding: 1em;
+            transition: all 350ms ease-out;
+        }
+
+        #myUsername,
+        #myPassword,
+        #myLogin {
+            border: 1px solid grey;
+            border-radius: .5em;
+            width: 100%;
+            ;
+        }
+
+        #myUsername,
+        #myPassword {
+            &:focus-within {
+                border-color: abs.$primary-color;
+            }
+        }
+
+        #myPassword {
+            letter-spacing: 3px;
+
+            &::placeholder {
+                letter-spacing: initial;
+            }
+        }
+
+        .line {
+            border-bottom: 1px solid grey;
+            margin-block: 1em 0;
+            width: 80%;
+            height: 1px;
+            position: relative;
+
+            &::before {
+                background-color: abs.$background-color;
+                color: grey;
+                content: 'or';
+                font-family: abs.$open-sans;
+                font-size: 16px;
+                position: absolute;
+                padding: .25em .75em;
+                left: 50%;
+                transform: translate(-50%, -1em);
+            }
+        }
+
+        #myLogin {
+            background-color: abs.$primary-color;
+            color: abs.$background-color;
+            font-weight: map-get(abs.$open-sans-weight, bold);
+            letter-spacing: 1px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: abs.$cto-color;
+            }
+        }
+
+        #mySign-in {
+            color: abs.$primary-color;
+            cursor: pointer;
+            font-weight: map-get(abs.$open-sans-weight, medium);
+            letter-spacing: 1px;
+            position: relative;
+
+            &::before {
+                background-color: currentColor;
+                content: '';
+                position: absolute;
+                bottom: 0 + .75em;
+                left: 50%;
+                right: 0;
+                transform: translateX(-50%) scale(0);
+                transform-origin: left;
+                transition: all 350ms ease-out;
+                height: 1px;
+                width: calc(100% - 1.25em);
+            }
+
+            &:hover {
+                color: abs.$cto-color;
+
+                &::before {
+                    transform: translateX(-50%) scale(1);
+                }
+            }
+        }
+    }
+}

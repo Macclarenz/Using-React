@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+  background-color: hsl(268deg, 0%, 100%);
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  border: 2px solid hsl(268deg, 90%, 48%);
+  border-radius: 1em;
+  box-shadow: rgba(68, 68, 68, 0.507) 0 0 1em;
+  padding: 2em 1em;
+  position: relative;
+  width: min(90%, 450px);
+}
+.container > h1 {
+  color: hsl(268deg, 90%, 48%);
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(32px, 10vw, 42px);
+  margin-bottom: 0.5em;
+}
+.container #myForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1em;
+}
+.container #myForm > *:not(.line) {
+  background-color: unset;
+  border: none;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  padding: 1em;
+  transition: all 350ms ease-out;
+}
+.container #myForm #myUsername,
+.container #myForm #myPassword,
+.container #myForm #myLogin {
+  border: 1px solid grey;
+  border-radius: 0.5em;
+  width: 100%;
+}
+.container #myForm #myUsername:focus-within,
+.container #myForm #myPassword:focus-within {
+  border-color: hsl(268deg, 90%, 48%);
+}
+.container #myForm #myPassword {
+  letter-spacing: 3px;
+}
+.container #myForm #myPassword::placeholder {
+  letter-spacing: initial;
+}
+.container #myForm .line {
+  border-bottom: 1px solid grey;
+  margin-block: 1em 0;
+  width: 80%;
+  height: 1px;
+  position: relative;
+}
+.container #myForm .line::before {
+  background-color: hsl(268deg, 0%, 100%);
+  color: grey;
+  content: "or";
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  position: absolute;
+  padding: 0.25em 0.75em;
+  left: 50%;
+  transform: translate(-50%, -1em);
+}
+.container #myForm #myLogin {
+  background-color: hsl(268deg, 90%, 48%);
+  color: hsl(268deg, 0%, 100%);
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.container #myForm #myLogin:hover {
+  background-color: hsl(268deg, 91%, 34%);
+}
+.container #myForm #mySign-in {
+  color: hsl(268deg, 90%, 48%);
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+}
+.container #myForm #mySign-in::before {
+  background-color: currentColor;
+  content: "";
+  position: absolute;
+  bottom: 0.75em;
+  left: 50%;
+  right: 0;
+  transform: translateX(-50%) scale(0);
+  transform-origin: left;
+  transition: all 350ms ease-out;
+  height: 1px;
+  width: calc(100% - 1.25em);
+}
+.container #myForm #mySign-in:hover {
+  color: hsl(268deg, 91%, 34%);
+}
+.container #myForm #mySign-in:hover::before {
+  transform: translateX(-50%) scale(1);
+}
+
+/*# sourceMappingURL=style.css.map */

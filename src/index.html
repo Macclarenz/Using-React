@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Using React 1</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" defer type = 'module'></script>
 </head>
 <body>
+    <div class="container">
+        <h1>Login or Sign-up</h1>
+        <form id="myForm" autocomplete="off">
+            <input type="text" id = 'myUsername' placeholder="Username">
+            <input type="password" id="myPassword" placeholder="Password">
+            <input type="submit" value="Login" id = 'myLogin'>
+            <div class = 'line'></div>
+            <button id = 'mySign-in'>Sign-in</button>
+        </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.1.0-next-af730436c-20220405/umd/react.production.min.js" integrity="sha512-xE983jGekkDwQ2diqCIe6b3BRE6m0asPwvBE4ER71C4QtX5+MWLLZS9gnRjNiO+zxVujPSCm+ZcNNOxKxmNOTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.1.0-next-af730436c-20220405/umd/react-dom.production.min.js" integrity="sha512-ObzUOfaDL0wB/LcETfUsFtt8V1oMVEgB3gzTHVgQkKps5RiITWkSwWKRKinwgAUc609EdrgMz8KVMz+RdbkwAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+$primary-color: hsl(268, 90%, 48%);
+$cto-color: hsl(268, 91%, 34%);
+$background-color: hsl(268, 0%, 100%);
+
+$open-sans: 'Open Sans', sans-serif;
+$open-sans-weight: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700
+);
+
+$shadow: rgba(68, 68, 68, 0.507) 0 0 1em;
