@@ -120,4 +120,50 @@ body {
   transform: translateX(-50%) scale(1);
 }
 
+.container-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1em;
+  border: 2px solid rgb(1, 221, 85);
+  border-radius: 1em;
+  box-shadow: rgba(68, 68, 68, 0.507) 0 0 1em;
+  position: fixed;
+  height: min(80%, 300px);
+  width: min(80%, 300px);
+  animation: display 500ms ease-out;
+}
+.container-message svg {
+  height: 80px;
+  width: 80px;
+}
+.container-message svg path {
+  fill: rgb(1, 221, 85);
+}
+.container-message h2,
+.container-message p {
+  font-family: "Open Sans", sans-serif;
+}
+.container-message h2 {
+  font-size: 32px;
+}
+.container-message p {
+  color: grey;
+  font-size: 14px;
+  margin-top: -1em;
+}
+
+@keyframes display {
+  0% {
+    opacity: 0;
+    transform: translateY(2em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

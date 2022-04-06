@@ -1,0 +1,51 @@
+@use '../abstract/'as abs;
+
+$green: rgb(1, 221, 85);
+
+.container-message {
+    @include abs.flex(center, center, column, nowrap, 1em);
+    border: 2px solid $green;
+    border-radius: 1em;
+    box-shadow: abs.$shadow;
+    position: fixed;
+    height: min(80%, 300px);
+    width: min(80%, 300px);
+    animation: display 500ms ease-out;
+
+
+    svg {
+        height: 80px;
+        width: 80px;
+
+        path {
+            fill: $green;
+        }
+    }
+
+    h2,
+    p {
+        font-family: abs.$open-sans;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    p {
+        color: grey;
+        font-size: 14px;
+        margin-top: -1em;
+    }
+}
+
+@keyframes display {
+    0% {
+        opacity: 0;
+        transform: translateY(2em);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
